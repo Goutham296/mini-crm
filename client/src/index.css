@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-primary: #5b5bd6;
+  --color-primary-600: #4a4ac4;
+  --color-primary-700: #3d3da8;
+  --color-primary-100: #e6e6fb;
+  --color-primary-50: #f2f2fd;
+
+  --color-navy: #1c1f3b;
+  --color-navy-700: #2a2e52;
+  --color-navy-500: #8d91b8;
+
+  --color-ink: #1f2335;
+  --color-muted: #6b7185;
+  --color-line: #e8eaf1;
+  --color-canvas: #f7f8fc;
+
+  --color-success: #1f9d63;
+  --color-success-50: #e7f6ee;
+  --color-danger: #e5484d;
+  --color-danger-50: #fdecec;
+  --color-warning: #d9831f;
+  --color-warning-50: #fdf3e6;
+
+  --radius-card: 10px;
+  --shadow-card: 0 1px 2px rgb(28 31 59 / 0.04), 0 4px 16px rgb(28 31 59 / 0.06);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@utility card {
+  @apply rounded-card bg-white shadow-card ring-1 ring-line/70;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast-in {
+  animation: toast-in 180ms ease-out;
+}
